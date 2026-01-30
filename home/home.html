@@ -1,0 +1,148 @@
+<main>
+  <section>
+    <div class="container py-5">
+      <div class="text-center p-3 bg-info-subtle">
+        <div class="rounded-pill p-3 border d-inline-block mb-4">
+          <span>
+            <i class="fa-solid fa-circle animated-color"></i>
+            <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+          </span>
+          <span>مرحباً بك في عدسة</span>
+        </div>
+        <h1 class="mb-4 fw-bold">
+          اكتشف <span class="text-warning">فن</span> <br />
+          التصوير الفوتوغرافي
+        </h1>
+        <p class="text-black-50 mb-4">
+          انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
+        </p>
+        <div class="mt-2 gy-3 mb-4">
+          <button
+            class="border-0 bg-normal py-3 px-5 rounded-pill text-white btn-castum fw-semibold ms-md-3"
+          >
+            استكشف المقالات <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="rounded-pill py-3 px-5 btn-demo bg-white fw-semibold">
+            <i class="fa-solid fa-circle-exclamation"></i> اعرف المزيد
+          </button>
+        </div>
+        <div
+          class="d-flex justify-content-between align-items-center gap-3 text-center w-50 mx-auto"
+        >
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-newspaper"></i>
+            <p>+50</p>
+            <p>مقالة</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-users"></i>
+            <p>+10ألف</p>
+            <p>قارئ</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-folder-open"></i>
+            <p>4</p>
+            <p>تصنيفات</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-pen-nib"></i>
+            <p>6</p>
+            <p>كاتب</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-4">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <div class="rounded-pill p-3 border d-inline-block mb-4">
+            <span>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+            </span>
+            <span>مميز </span>
+          </div>
+          <h2>مقالات مختارة</h2>
+          <p>محتوى منتقى لبدء رحلة تعلمك</p>
+        </div>
+        <button
+          class="border-0 bg-normal py-3 px-5 rounded-3 text-white btn-castum fw-semibold ms-md-3"
+        >
+          عرض الكل <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid">
+      <div class="row rounded-2 overflow-hidden gy-4">
+        @for (item of articleList; track $index) {
+          <div class="m-card col-md-6 p-0 overflow-hidden rounded-end-3">
+            <img class="w-100 h-100 img-hover" [src]="item.image" [alt]="item.slug" />
+          </div>
+          <div class="m-card col-md-6 rounded-start-3 border border-1 p-0 bg-dark">
+            <div class="p-5">
+              <div class="mb-3">
+                <span class="rounded-pill p-2 border border-1 text-main">إضاءة </span
+                ><span class="text-white-50"
+                  ><i class="fa-regular fa-clock"></i> {{ item.readTime }}
+                </span>
+              </div>
+              <h2 class="mb-2">{{ item.title }}</h2>
+              <p class="text-white-50">
+                {{ item.excerpt }}
+              </p>
+              <div class="mt-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-3">
+                  <div class="col-3">
+                    <img class="w-100 rounded-circle" [src]="item.author.avatar" alt="" />
+                  </div>
+                  <div>
+                    <p class="fs-6 m-0 text-light">{{ item.author.name }}</p>
+                    <p class="fs-6 m-0 text-white-50">{{ item.date }}</p>
+                  </div>
+                </div>
+                <span class="btn-castums main-color text-main"
+                  >اقرأ المقال <i class="fa-solid fa-arrow-left"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="py-4">
+    <div class="container-fluid">
+      <div class="text-center p-3 bg-info-subtle mb-3">
+        <div class="rounded-pill p-3 border d-inline-block mb-4">
+          <span>
+            <i class="fa-solid fa-circle animated-color"></i>
+            <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+          </span>
+          <span> التصنيفات</span>
+        </div>
+        <h1 class="mb-4 fw-bold">استكشف حسب الموضوع</h1>
+        <p class="text-black-50 mb-4">اعثر على محتوى مصمم حسب اهتماماتك</p>
+      </div>
+      <div class="row g-3">
+        @for (categorie of categorieList; track $index) {
+          <div class="col-6 col-md-3 bg-hov rounded-3">
+            <div class="p-2">
+              <a class="text-decoration-none text-reset" href="">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span><i class="fa-solid {{ categorie.icon }} text-main"></i></span>
+                  <span><i class="fa-solid fa-angle-left text-white"></i></span>
+                </div>
+                <h3 class="text-black">{{ categorie.name }}</h3>
+                <p class="text-black-50">{{ categorie.count }} مقالة</p>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</main>

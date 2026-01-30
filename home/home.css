@@ -1,0 +1,96 @@
+.animated-color {
+  display: inline-block;
+  font-size: 8px;
+  animation: changeColor 1.5s infinite alternate ease-in-out;
+}
+.fa-circle {
+  font-size: 8px;
+}
+
+.scale-up {
+  animation: colorAndScale 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes changeColor {
+  from {
+    color: #f97316;
+  }
+  to {
+    color: #914611;
+  }
+}
+
+@keyframes colorAndScale {
+  from {
+    color: #f97316;
+    transform: scale(1);
+  }
+  to {
+    color: #914611;
+    transform: scale(1.4);
+  }
+}
+
+.fa-arrow-left {
+  transition: all 0.4s;
+}
+.btn-castum:hover .fa-arrow-left {
+  transform: translateX(-5px);
+}
+.btn-castum:hover {
+  transform: translateY(-5px);
+}
+.btn-castum {
+  transition: all 0.4s;
+}
+.bg-normal {
+  background-color: #ea580c;
+}
+
+.m-card {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.m-card img {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.m-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+.m-card h2 {
+  transition: color 0.3s ease;
+  color: white;
+}
+.text-main {
+  color: #ff6900;
+}
+.m-card:hover h2 {
+  color: #ff6900;
+}
+
+.m-card .btn-castums {
+  transition: transform 0.4s ease;
+}
+
+.m-card .btn-castums i {
+  transition: transform 0.4s ease;
+}
+
+.m-card:hover .btn-castums {
+  transform: translateX(6px);
+}
+
+.m-card:hover .btn-castums i {
+  transform: translateX(-6px);
+}
+
+.bg-hov:hover {
+  background-color: #f97316;
+}
