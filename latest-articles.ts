@@ -1,4 +1,4 @@
-export interface Article {
+export interface LatestArticles {
   id: number;
   slug: string;
   title: string;
@@ -15,17 +15,4 @@ export interface Article {
   readTime: string;
   featured: boolean;
   tags: string[];
-}
-
-export interface SiteInfo {
-  name: string;
-  tagline: string;
-  description: string;
-  email: string;
-  social: {
-    twitter: string;
-    github: string;
-    linkedin: string;
-    youtube: string;
-  };
 }

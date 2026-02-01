@@ -78,7 +78,7 @@
   <section>
     <div class="container-fluid">
       <div class="row rounded-2 overflow-hidden gy-4">
-        @for (item of articleList; track $index) {
+        @for (item of specialArticles; track $index) {
           <div class="m-card col-md-6 p-0 overflow-hidden rounded-end-3">
             <img class="w-100 h-100 img-hover" [src]="item.image" [alt]="item.slug" />
           </div>
@@ -128,17 +128,80 @@
         <p class="text-black-50 mb-4">اعثر على محتوى مصمم حسب اهتماماتك</p>
       </div>
       <div class="row g-3">
-        @for (categorie of categorieList; track $index) {
-          <div class="col-6 col-md-3 bg-hov rounded-3">
+        @for (categorie of dummy.categories; track $index) {
+          <div
+            class="col-6 col-md-3 bg-hov rounded-3"
+            [routerLink]="'/home'"
+            [queryParams]="{ category: categorie.name }"
+          >
             <div class="p-2">
-              <a class="text-decoration-none text-reset" href="">
+              <a class="text-decoration-none text-reset">
                 <div class="d-flex justify-content-between align-items-center">
-                  <span><i class="fa-solid {{ categorie.icon }} text-main"></i></span>
+                  <span><i class="fa-solid text-main" [class]="categorie.icon"></i></span>
                   <span><i class="fa-solid fa-angle-left text-white"></i></span>
                 </div>
                 <h3 class="text-black">{{ categorie.name }}</h3>
                 <p class="text-black-50">{{ categorie.count }} مقالة</p>
               </a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="py-4">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <div class="rounded-pill p-3 border d-inline-block mb-4">
+            <span>
+              <i class="fa-solid fa-circle animated-color"></i>
+              <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+            </span>
+            <span> الأحدث</span>
+          </div>
+          <h2>أحدث المقالات</h2>
+          <p>محتوى جديد طازج من المطبعة</p>
+        </div>
+        <button
+          class="border-0 bg-normal py-3 px-5 rounded-pill text-white btn-castum fw-semibold ms-md-3"
+        >
+          استكشف المقالات <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for (item of latestArticlesList; track $index) {
+          <div class="col over">
+            <div class="card h-100 overflow-hidden btn-castum">
+              <img [src]="item.image" class="card-img-top overflow-hidden" alt="..." />
+              <div class="card-body p-4">
+                <div>
+                  <span><i class="fa-regular fa-clock"></i> 10 دقائق للقراءة </span>
+                  <span>{{ item.date }}</span>
+                </div>
+                <h3 class="card-title">أساسيات إعدادات الكاميرا: مثلث التعريض الضوئي</h3>
+                <p class="card-text">
+                  افهم العلاقة بين فتحة العدسة وسرعة الغالق وحساسية ISO للتحكم الكامل في صورك.
+                </p>
+                <div class="mt-4 d-flex justify-content-between align-items-center">
+                  <div class="d-flex gap-3">
+                    <div class="col-3">
+                      <img
+                        class="w-100 rounded-circle"
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <p class="fs-6 m-0">داود خالد</p>
+                      <p class="fs-6 m-0 text-black-50">مدرب تصوير</p>
+                    </div>
+                  </div>
+                  <span class="btn-castums main-color text-main"
+                    ><i class="fa-solid fa-angle-left"></i
+                  ></span>
+                </div>
+              </div>
             </div>
           </div>
         }
