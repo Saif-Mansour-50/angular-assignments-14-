@@ -61,4 +61,10 @@ export class Contact {
   pages(index: number) {
     this.displayedFilterResult = this.filterArticle.slice(index * 6, index * 6 + 6);
   }
+
+  viewMode: 'grid' | 'list' = 'grid';
+
+  toggleV(mode: 'grid' | 'list') {
+    this.viewMode = mode;
+  }
 }

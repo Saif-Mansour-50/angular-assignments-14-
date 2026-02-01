@@ -108,3 +108,19 @@
 .card:hover h3 {
   color: #ff6900;
 }
+
+.category {
+  top: 30px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.403);
+}
+.bg-g {
+  top: 30px;
+  right: 10px;
+  background-image: linear-gradient(to right, #ff7200, #f2ac00);
+}
+
+.form-control:focus {
+  border-color: #ff6900;
+  box-shadow: 0 0 0 0.25rem rgba(255, 106, 0, 0.486);
+}
