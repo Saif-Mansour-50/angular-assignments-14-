@@ -1,0 +1,54 @@
+.team-card {
+  border: 2px solid #eee;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #dc3545;
+}
+
+.team-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #dc3545;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social.linkedin {
+  background-color: #0a66c2;
+}
+
+.social.github {
+  background-color: #24292e;
+}
+
+.social.twitter {
+  background-color: #1da1f2;
+}
+
+.social:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #f95401, #f5a602);
+}

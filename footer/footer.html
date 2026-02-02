@@ -1,1 +1,162 @@
-<p>footer works!</p>
+<footer class="footer-custom position-relative overflow-hidden">
+  <div class="blur-bg-1 position-absolute top-0"></div>
+  <div class="blur-bg-2 position-absolute bottom-0"></div>
+
+  <div class="footer-content position-relative py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-3">
+          <a
+            class="footer-brand d-flex align-items-center gap-3 mb-4 text-decoration-none"
+            href="#"
+          >
+            <div class="footer-logo d-flex align-items-center justify-content-center rounded-3">
+              <span class="logo-text text-white fw-bold fs-5">ع</span>
+            </div>
+            <span class="brand-name fs-5 fw-bold text-white">عدسة</span>
+          </a>
+          <p class="footer-description small text-secondary mb-4">
+            مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير
+            مهاراتكم.
+          </p>
+          <div class="social-links d-flex gap-2">
+            <a
+              href="https://twitter.com/adasah"
+              target="_blank"
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none"
+            >
+              <i class="fa-brands fa-x-twitter fa-xl"></i>
+            </a>
+            <a
+              href="https://github.com/adasah"
+              target="_blank"
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none"
+            >
+              <i class="fa-brands fa-github fa-xl"></i>
+            </a>
+            <a
+              href="https://linkedin.com/company/adasah"
+              target="_blank"
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none"
+            >
+              <i class="fa-brands fa-linkedin fa-xl"></i>
+            </a>
+            <a
+              href="https://youtube.com/@adasah"
+              target="_blank"
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none"
+            >
+              <i class="fa-brands fa-youtube fa-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-heading text-white fw-semibold mb-4 d-flex align-items-center gap-2">
+            <span class="heading-line"></span>
+            استكشف
+          </h5>
+          <ul class="footer-links list-unstyled m-0 d-flex flex-column gap-2">
+            <li>
+              <a routerLink="/home" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                الرئيسية
+              </a>
+            </li>
+            <li>
+              <a routerLink="/contact" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                المدونة
+              </a>
+            </li>
+            <li>
+              <a routerLink="/about" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                من نحن
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-heading text-white fw-semibold mb-4 d-flex align-items-center gap-2">
+            <span class="heading-line"></span>
+            التصنيفات
+          </h5>
+          <ul class="footer-links list-unstyled m-0 d-flex flex-column gap-2">
+            <li>
+              <a href="#" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                إضاءة
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                بورتريه
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                مناظر طبيعية
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link text-decoration-none">
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                تقنيات
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-heading text-white fw-semibold mb-4 d-flex align-items-center gap-2">
+            <span class="heading-line"></span>
+            ابقى على اطلاع
+          </h5>
+          <p class="newsletter-text small text-secondary mb-3">
+            اشترك للحصول على أحدث المقالات والتحديثات.
+          </p>
+          <form class="newsletter-form d-flex flex-column gap-3">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control newsletter-input"
+                placeholder="أدخل بريدك الإلكتروني"
+              />
+            </div>
+            <button type="submit" class="btn btn-subscribe rounded-pill w-100 text-light">
+              اشترك
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom position-relative py-4">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center mb-3 mb-md-0">
+          <p class="copyright small text-secondary m-0">
+            © 2026 عدسة. صنع بكل <i class="fa-solid fa-heart text-orange"></i> جميع الحقوق محفوظة.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="footer-bottom-links d-flex gap-3 justify-content-center justify-content-md-end"
+          >
+            <a href="#" class="bottom-link small text-secondary text-decoration-none"
+              >سياسة الخصوصية</a
+            >
+            <a href="#" class="bottom-link small text-secondary text-decoration-none"
+              >شروط الخدمة</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

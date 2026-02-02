@@ -1,3 +1,45 @@
+.hero-section {
+  min-height: 100vh;
+}
+
+.grid-bg {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.115) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.108) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -55;
+  background-color: #0a0a0ac1;
+}
+
+.blob {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 30%, #5842192c, transparent 60%);
+  filter: blur(60px);
+  z-index: 88;
+}
+
+.blob-1 {
+  top: -80px;
+  left: -80px;
+}
+
+.blob-2 {
+  bottom: -80px;
+  right: -80px;
+}
+
+.blob-center {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+/* ///////////////////////// */
 .animated-color {
   display: inline-block;
   font-size: 8px;
@@ -45,6 +87,7 @@
 }
 .bg-normal {
   background-color: #ea580c;
+  cursor: pointer;
 }
 
 .m-card {

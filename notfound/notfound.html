@@ -1,1 +1,61 @@
-<p>notfound works!</p>
+<div
+  class="error-page d-flex align-items-center justify-content-center position-relative overflow-hidden"
+>
+  <div class="position-absolute top-0 start-0 w-100 h-100 grid-bg"></div>
+
+  <!-- <div class="position-absolute top-0 start-0 w-100 h-100 opacity-40">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+  </div> -->
+
+  <div class="position-relative text-center px-4 content-wrapper">
+    <div class="position-relative mb-4">
+      <h1 class="display-404">404</h1>
+    </div>
+
+    <div class="icon-container position-relative mx-auto mb-4">
+      <div class="position-absolute top-0 start-0 w-100 h-100 icon-bg rounded-circle"></div>
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center m-color"
+      >
+        <i style="color: #ff6900" class="fa-regular fa-face-frown h1"></i>
+      </div>
+      <div class="icon-dot icon-dot-1"></div>
+      <div class="icon-dot icon-dot-2"></div>
+    </div>
+
+    <h2 class="fs-2 fw-bold text-white mb-4">عفواً! الصفحة غير موجودة</h2>
+
+    <p class="text-white-50 mb-4 fs-5">
+      الصفحة التي تبحث عنها غير موجودة أو تم نقلها. دعنا نعيدك إلى المسار الصحيح.
+    </p>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+      <a
+        class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2 rounded-pill"
+        routerLink="/home"
+      >
+        <i class="fa-regular fa-house"></i>
+        الذهاب للرئيسية
+      </a>
+      <a
+        class="btn btn-outline-light btn-lg d-inline-flex align-items-center justify-content-center gap-2 rounded-pill"
+        routerLink="/contact"
+      >
+        <i class="fa-regular fa-newspaper"></i>
+        تصفح المقالات
+      </a>
+    </div>
+
+    <div class="pt-4 border-top footer-links">
+      <p class="small text-secondary mb-3">قد تجد هذه مفيدة:</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3 small">
+        <a class="text-decoration-none link-orange" routerLink="/contact">المدونة</a>
+        <span class="text-secondary">•</span>
+        <a class="text-decoration-none link-orange" routerLink="/about">من نحن</a>
+        <span class="text-secondary">•</span>
+        <a class="text-decoration-none link-orange">الخصوصية</a>
+      </div>
+    </div>
+  </div>
+</div>

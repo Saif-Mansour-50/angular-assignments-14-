@@ -1,6 +1,7 @@
 import { Article } from './../article';
 import { Component } from '@angular/core';
 import { DUMMY, Dummy } from '../../dummy';
+import { FormsModule } from '@angular/forms';
 
 interface FilterButton {
   label: string;
@@ -9,17 +10,18 @@ interface FilterButton {
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
 export class Contact {
   dummy: Dummy = DUMMY;
 
+  searchTerm: string = '';
+
   filterArticle: Article[] = this.dummy.articles.slice();
 
   displayedFilterResult: Article[] = this.dummy.articles.slice(0, 6);
-
   categoryFilterButtons: FilterButton[] = [
     { label: 'جميع المقالات', value: '' },
     { label: ' إضاءة', value: 'إضاءة' },
@@ -66,5 +68,20 @@ export class Contact {
 
   toggleV(mode: 'grid' | 'list') {
     this.viewMode = mode;
+  }
+
+  searchArticles() {
+    let result = this.dummy.articles;
+
+    // 🔹 search in excerpt only
+    if (this.searchTerm.trim()) {
+      const term = this.searchTerm.toLowerCase();
+
+      result = result.filter((art) => art.excerpt.toLowerCase().includes(term));
+    }
+
+    this.filterArticle = result;
+    this.displayedFilterResult = result.slice(0, 6);
+    this.pageSetup();
   }
 }

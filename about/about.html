@@ -1,1 +1,149 @@
-<p>about works!</p>
+<main>
+  <section>
+    <div class="container py-5">
+      <div class="text-center p-3 bg-info-subtle">
+        <div class="rounded-pill p-3 border d-inline-block mb-4">
+          <span>
+            <i class="fa-solid fa-circle animated-color"></i>
+            <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+          </span>
+          <span>من نحن</span>
+        </div>
+        <h1 class="mb-4 fw-bold">
+          مهمتنا هي <span class="text-warning">الإعلام والإلهام</span> <br />
+        </h1>
+        <p class="text-black-50 mb-4">
+          مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير
+          مهاراتكم. نحن شغوفون بمشاركة المعرفة ومساعدة المصورين على تنمية مهاراتهم من خلال محتوى
+          عالي الجودة.
+        </p>
+        <div
+          class="d-flex justify-content-between align-items-center gap-3 text-center w-50 mx-auto"
+        >
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-users"></i>
+            <p>+2مليون</p>
+            <p>قارئ شهرياً</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-newspaper"></i>
+            <p>+500</p>
+            <p>مقالة منشورة</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-pen-nib"></i>
+            <p>+50</p>
+            <p>كاتب خبير</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-book-open"></i>
+            <p>+15</p>
+            <p>تصنيف</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container py-5">
+      <div class="text-center p-3 bg-info-subtle">
+        <h1 class="mb-4 fw-bold">قيمنا</h1>
+        <p class="text-black-50 mb-4">المبادئ التي توجه كل ما نقوم بإنشائه</p>
+        <div
+          class="d-flex justify-content-between align-items-center gap-3 text-center w-50 mx-auto"
+        >
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-bullseye"></i>
+            <p>+الجودة أولاً</p>
+            <p>محتوى مدروس ومكتوب بخبرة</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-bolt"></i>
+            <p>تركيز عملي</p>
+            <p>أمثلة واقعية يمكنك تطبيقها اليوم</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-handshake"></i>
+            <p>المجتمع</p>
+            <p>تعلم مع آلاف المصورين</p>
+          </div>
+          <div class="border border-3 rounded-3 px-4 py-2">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <p>دائماً محدث</p>
+            <p>أحدث الاتجاهات وأفضل الممارسات</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container py-5">
+      <div class="text-center p-3 bg-info-subtle">
+        <div class="rounded-pill p-3 border d-inline-block mb-4">
+          <span>
+            <i class="fa-solid fa-circle animated-color"></i>
+          </span>
+          <span>فريقنا </span>
+        </div>
+        <h1 class="mb-4 fw-bold">تعرف على كتابنا</h1>
+        <p class="text-black-50 mb-4">
+          فريقنا من المصورين والكتاب ذوي الخبرة شغوفون بمشاركة معرفتهم مع المجتمع.
+        </p>
+        <div class="row g-3">
+          @for (author of authors; track $index) {
+            <div class="col-md-4">
+              <div class="team-card text-center p-3">
+                <img class="team-img mb-3" [src]="author.author.avatar" alt="" />
+                <h4 class="mb-1">{{ author.author.name }}</h4>
+                <p class="text-muted mb-0">{{ author.author.role }}</p>
+                <div class="social-icons mt-3 d-flex align-items-center justify-content-center">
+                  <a
+                    href="#"
+                    class="social linkedin rounded-2 d-flex align-items-center justify-content-center"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social github rounded-2 d-flex align-items-center justify-content-center"
+                    aria-label="GitHub"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social twitter rounded-2 d-flex align-items-center justify-content-center"
+                    aria-label="Twitter"
+                  >
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container py-4">
+      <div class="p-3 text-center gradient-text">
+        <div class="p-4">
+          <h2 class="text-light">لديك أسئلة؟ دعنا نتحدث!</h2>
+          <p class="text-white-50 w-50 py-3 mx-auto">
+            نحب أن نسمع منك. سواء كان لديك سؤال حول محتوانا، أو تريد المساهمة، أو تريد فقط إلقاء
+            التحية، لا تتردد في التواصل.
+          </p>
+
+          <div class="d-flex align-items-center justify-content-center gap-2 mt-3">
+            <button class="btn btn-dark py-2 px-3">
+              تواصل معنا <i class="fa-solid fa-envelope"></i>
+            </button>
+            <button class="btn btn-outline-light py-2 px-3">تصفح المقالات</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

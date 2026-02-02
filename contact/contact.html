@@ -23,7 +23,10 @@
           placeholder="ابحث في المقالات..."
           aria-label="Search"
           id="searchInputs"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="searchArticles()"
         />
+
         <div class="d-flex">
           @for (button of categoryFilterButtons; track $index) {
             <button

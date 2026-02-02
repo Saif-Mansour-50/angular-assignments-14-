@@ -1,58 +1,71 @@
 <main>
-  <section>
-    <div class="container py-5">
-      <div class="text-center p-3 bg-info-subtle">
+  <section class="hero-section position-relative overflow-hidden">
+    <div class="grid-bg position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <div class="blob blob-1 position-absolute"></div>
+    <div class="blob blob-2 position-absolute"></div>
+    <div class="blob blob-center position-absolute"></div>
+
+    <div class="container py-5 position-relative z-2">
+      <div class="text-center p-3 rounded-4">
         <div class="rounded-pill p-3 border d-inline-block mb-4">
           <span>
             <i class="fa-solid fa-circle animated-color"></i>
             <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
           </span>
-          <span>مرحباً بك في عدسة</span>
+          <span class="text-white">مرحباً بك في عدسة</span>
         </div>
-        <h1 class="mb-4 fw-bold">
-          اكتشف <span class="text-warning">فن</span> <br />
+
+        <h1 class="mb-4 fw-bold text-light">
+          اكتشف <span class="text-warning">فن</span><br />
           التصوير الفوتوغرافي
         </h1>
+
         <p class="text-black-50 mb-4">
           انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
         </p>
+
         <div class="mt-2 gy-3 mb-4">
           <button
-            class="border-0 bg-normal py-3 px-5 rounded-pill text-white btn-castum fw-semibold ms-md-3"
+            routerLink="/contact"
+            class="border-0 bg-normal py-3 px-5 rounded-pill text-white fw-semibold ms-md-3"
           >
             استكشف المقالات <i class="fa-solid fa-arrow-left"></i>
           </button>
-          <button class="rounded-pill py-3 px-5 btn-demo bg-white fw-semibold">
-            <i class="fa-solid fa-circle-exclamation"></i> اعرف المزيد
+
+          <button class="rounded-pill py-3 px-5 bg-white fw-semibold">
+            <i class="fa-solid fa-circle-exclamation text-main"></i> اعرف المزيد
           </button>
         </div>
+
         <div
-          class="d-flex justify-content-between align-items-center gap-3 text-center w-50 mx-auto"
+          class="d-flex justify-content-between align-items-center gap-3 text-center w-75 mx-auto flex-wrap"
         >
           <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-newspaper"></i>
-            <p>+50</p>
-            <p>مقالة</p>
+            <i class="fa-solid fa-newspaper text-main"></i>
+            <p class="fw-semibold text-main">+50</p>
+            <p class="text-white-50">مقالة</p>
           </div>
           <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-users"></i>
-            <p>+10ألف</p>
-            <p>قارئ</p>
+            <i class="fa-solid fa-users text-main"></i>
+            <p class="fw-semibold text-main">+10ألف</p>
+            <p class="text-white-50">قارئ</p>
           </div>
           <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-folder-open"></i>
-            <p>4</p>
-            <p>تصنيفات</p>
+            <i class="fa-solid fa-folder-open text-main"></i>
+            <p class="fw-semibold text-main">4</p>
+            <p class="text-white-50">تصنيفات</p>
           </div>
           <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-pen-nib"></i>
-            <p>6</p>
-            <p>كاتب</p>
+            <i class="fa-solid fa-pen-nib text-main"></i>
+            <p class="fw-semibold text-main">6</p>
+            <p class="text-white-50">كاتب</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section class="py-4">
     <div class="container-fluid">
       <div class="d-flex justify-content-between align-items-center">
@@ -68,6 +81,7 @@
           <p>محتوى منتقى لبدء رحلة تعلمك</p>
         </div>
         <button
+          [routerLink]="'/contact'"
           class="border-0 bg-normal py-3 px-5 rounded-3 text-white btn-castum fw-semibold ms-md-3"
         >
           عرض الكل <i class="fa-solid fa-arrow-left"></i>
@@ -100,7 +114,11 @@
               <div class="mt-4 d-flex justify-content-between align-items-center">
                 <div class="d-flex gap-3">
                   <div class="col-3">
-                    <img class="w-100 rounded-circle" [src]="item.author.avatar" alt="" />
+                    <img
+                      class="w-100 rounded-circle"
+                      [src]="item.author.avatar"
+                      [alt]="item.author.name"
+                    />
                   </div>
                   <div>
                     <p class="fs-6 m-0 text-light">{{ item.author.name }}</p>
@@ -167,6 +185,7 @@
           <p>محتوى جديد طازج من المطبعة</p>
         </div>
         <button
+          routerLink="/contact"
           class="border-0 bg-normal py-3 px-5 rounded-pill text-white btn-castum fw-semibold ms-md-3"
         >
           استكشف المقالات <i class="fa-solid fa-arrow-left"></i>
@@ -182,25 +201,21 @@
               </div>
               <div class="card-body p-4">
                 <div>
-                  <span><i class="fa-regular fa-clock"></i> 10 دقائق للقراءة </span>
+                  <span><i class="fa-regular fa-clock"></i> {{ item.readTime }} </span>
                   <span>{{ item.date }}</span>
                 </div>
-                <h3 class="card-title">أساسيات إعدادات الكاميرا: مثلث التعريض الضوئي</h3>
+                <h3 class="card-title">{{ item.title }}</h3>
                 <p class="card-text">
-                  افهم العلاقة بين فتحة العدسة وسرعة الغالق وحساسية ISO للتحكم الكامل في صورك.
+                  {{ item.excerpt }}
                 </p>
                 <div class="mt-4 d-flex justify-content-between align-items-center">
                   <div class="d-flex gap-3">
                     <div class="col-3">
-                      <img
-                        class="w-100 rounded-circle"
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
-                        alt=""
-                      />
+                      <img class="w-100 rounded-circle" [src]="item.author.avatar" alt="" />
                     </div>
                     <div>
-                      <p class="fs-6 m-0">داود خالد</p>
-                      <p class="fs-6 m-0 text-black-50">مدرب تصوير</p>
+                      <p class="fs-6 m-0">{{ item.author.name }}</p>
+                      <p class="fs-6 m-0 text-black-50">{{ item.author.role }}</p>
                     </div>
                   </div>
                   <span class="btn-castums main-color text-main"

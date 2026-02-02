@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DUMMY, Dummy } from '../../dummy';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
+  dummy: Dummy = DUMMY;
 
+  authors = this.dummy.articles;
 }
