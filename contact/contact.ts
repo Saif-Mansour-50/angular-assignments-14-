@@ -17,7 +17,11 @@ interface FilterButton {
 export class Contact {
   dummy: Dummy = DUMMY;
 
+  activeCategory: string = '';
+
   searchTerm: string = '';
+
+  currentPage = 0;
 
   filterArticle: Article[] = this.dummy.articles.slice();
 
@@ -61,6 +65,7 @@ export class Contact {
   }
 
   pages(index: number) {
+    this.currentPage = index;
     this.displayedFilterResult = this.filterArticle.slice(index * 6, index * 6 + 6);
   }
 
@@ -73,15 +78,13 @@ export class Contact {
   searchArticles() {
     let result = this.dummy.articles;
 
-    // 🔹 search in excerpt only
     if (this.searchTerm.trim()) {
-      const term = this.searchTerm.toLowerCase();
+      let search = this.searchTerm;
 
-      result = result.filter((art) => art.excerpt.toLowerCase().includes(term));
+      result = result.filter((S) => S.excerpt.includes(search) || S.title.includes(search));
     }
 
     this.filterArticle = result;
     this.displayedFilterResult = result.slice(0, 6);
-    this.pageSetup();
   }
 }

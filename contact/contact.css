@@ -34,3 +34,74 @@
   top: 20px;
   background-color: rgba(0, 0, 0, 0.403);
 }
+
+.category-btn {
+  border: 2px solid #dee2e6;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.385);
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: #f54a00ad;
+  color: #f54a00;
+}
+
+.category-btn.active {
+  background: linear-gradient(to right, #ff6700, #f54a00);
+  border-color: transparent;
+  color: #fff;
+}
+
+.category-btn.active:hover {
+  color: #fff;
+  opacity: 0.95;
+}
+
+.view-btn {
+  border: 2px solid #dee2e6;
+  background: transparent;
+  color: #8b7f7f;
+  transition: all 0.3s;
+}
+
+.view-btn:hover {
+  border-color: #f54a00ad;
+  color: #f54a00;
+}
+
+.view-btn.active {
+  background: linear-gradient(to right, #ff6700, #f54a00);
+  border-color: transparent;
+  color: #fff;
+}
+
+.view-btn.active:hover {
+  color: #fff;
+  opacity: 0.95;
+}
+
+.page-btn {
+  min-width: 42px;
+  height: 42px;
+  border: 2px solid #dee2e6;
+  background: transparent;
+  color: #dad3d3;
+  transition: all 0.3s;
+}
+
+.page-btn:hover {
+  border-color: #f54a00ad;
+  color: #f54a00;
+}
+
+.page-btn.active {
+  background: linear-gradient(to right, #ff6700, #f54a00);
+  border-color: transparent;
+  color: #fff;
+}
+
+.page-btn.active:hover {
+  background: linear-gradient(to right, #ff6700, #f54a00);
+  color: #fff;
+}

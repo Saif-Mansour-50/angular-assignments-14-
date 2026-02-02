@@ -30,8 +30,9 @@
         <div class="d-flex">
           @for (button of categoryFilterButtons; track $index) {
             <button
-              class="btn fw-semibold btn-outline-info me-1"
-              (click)="filterArticles(button.value)"
+              class="btn fw-semibold me-1 category-btn rounded-3"
+              [class.active]="activeCategory === button.value"
+              (click)="filterArticles(button.value); activeCategory = button.value"
             >
               {{ button.label }}
             </button>
@@ -42,7 +43,7 @@
         <p>عرض {{ filterArticle.length }} مقالات</p>
         <div class="btn-group">
           <button
-            class="btn btn-outline-primary ms-2"
+            class="btn view-btn ms-2"
             [class.active]="viewMode === 'grid'"
             (click)="toggleV('grid')"
           >
@@ -50,7 +51,7 @@
           </button>
 
           <button
-            class="btn btn-outline-primary"
+            class="btn view-btn"
             [class.active]="viewMode === 'list'"
             (click)="toggleV('list')"
           >
@@ -107,7 +108,13 @@
     @if (flag) {
       <div class="d-flex justify-content-center align-items-center gap-3 py-3">
         @for (page of pagesNumber; track $index) {
-          <button class="btn btn-outline-dark" (click)="pages($index)">{{ $index + 1 }}</button>
+          <button
+            class="btn page-btn"
+            [class.active]="currentPage === $index"
+            (click)="pages($index)"
+          >
+            {{ $index + 1 }}
+          </button>
         }
       </div>
     }
