@@ -72,7 +72,7 @@
   </section>
 
   <section class="py-4">
-    <div class="container-fluid">
+    <div class="container">
       <div class="d-flex justify-content-between align-items-center">
         <div>
           <div class="rounded-pill p-3 border d-inline-block mb-4">
@@ -147,7 +147,7 @@
     </div>
   </section>
   <section class="py-4">
-    <div class="container-fluid">
+    <div class="container">
       <div class="text-center p-4 section-header mb-4">
         <div class="rounded-pill px-4 py-2 border d-inline-flex align-items-center gap-2 mb-4">
           <span class="dots">
@@ -166,7 +166,8 @@
           <div class="col-6 col-md-3">
             <div
               class="bg-hov rounded-3 h-100 p-3 category-card"
-              [routerLink]="'/home'"
+              ActivatedRoute
+              routerLink="/contact"
               [queryParams]="{ category: categorie.name }"
             >
               <div class="d-flex justify-content-between align-items-center mb-3">
@@ -183,7 +184,7 @@
     </div>
   </section>
   <section class="py-4">
-    <div class="container-fluid">
+    <div class="container">
       <div class="d-flex justify-content-between align-items-center">
         <div>
           <div class="rounded-pill p-3 border d-inline-block mb-4">
