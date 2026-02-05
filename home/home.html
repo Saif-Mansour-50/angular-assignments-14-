@@ -8,7 +8,7 @@
 
     <div class="container py-5 position-relative z-2">
       <div class="text-center p-3 rounded-4">
-        <div class="rounded-pill p-3 border d-inline-block mb-4">
+        <div class="rounded-pill p-3 borderz d-inline-block mb-4">
           <span>
             <i class="fa-solid fa-circle animated-color"></i>
             <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
@@ -25,41 +25,46 @@
           انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
         </p>
 
-        <div class="mt-2 gy-3 mb-4">
+        <div class="mt-2 mb-4 d-flex flex-wrap gap-3 align-items-center justify-content-center">
           <button
             routerLink="/contact"
-            class="border-0 bg-normal py-3 px-5 rounded-pill text-white fw-semibold ms-md-3"
+            class="bg-normal py-3 px-5 rounded-pill text-white fw-semibold border-0"
           >
-            استكشف المقالات <i class="fa-solid fa-arrow-left"></i>
+            استكشف المقالات
+            <i class="fa-solid fa-arrow-left ms-2"></i>
           </button>
 
-          <button class="rounded-pill py-3 px-5 bg-white fw-semibold">
-            <i class="fa-solid fa-circle-exclamation text-main"></i> اعرف المزيد
+          <button class="btn-transparent py-3 px-5 rounded-pill fw-semibold">
+            <i class="fa-solid fa-circle-exclamation me-2"></i>
+            اعرف المزيد
           </button>
         </div>
 
         <div
-          class="d-flex justify-content-between align-items-center gap-3 text-center w-75 mx-auto flex-wrap"
+          class="d-flex justify-content-center align-items-center gap-3 text-center w-75 mx-auto flex-wrap"
         >
-          <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-newspaper text-main"></i>
-            <p class="fw-semibold text-main">+50</p>
-            <p class="text-white-50">مقالة</p>
+          <div class="stat-card">
+            <i class="fa-solid fa-newspaper"></i>
+            <p class="stat-number">+50</p>
+            <p class="stat-label">مقالة</p>
           </div>
-          <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-users text-main"></i>
-            <p class="fw-semibold text-main">+10ألف</p>
-            <p class="text-white-50">قارئ</p>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-users"></i>
+            <p class="stat-number">+10 ألف</p>
+            <p class="stat-label">قارئ</p>
           </div>
-          <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-folder-open text-main"></i>
-            <p class="fw-semibold text-main">4</p>
-            <p class="text-white-50">تصنيفات</p>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-folder-open"></i>
+            <p class="stat-number">4</p>
+            <p class="stat-label">تصنيفات</p>
           </div>
-          <div class="border border-3 rounded-3 px-4 py-2">
-            <i class="fa-solid fa-pen-nib text-main"></i>
-            <p class="fw-semibold text-main">6</p>
-            <p class="text-white-50">كاتب</p>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-pen-nib"></i>
+            <p class="stat-number">6</p>
+            <p class="stat-label">كاتب</p>
           </div>
         </div>
       </div>
@@ -90,16 +95,22 @@
     </div>
   </section>
   <section>
-    <div class="container-fluid">
-      <div class="row rounded-2 overflow-hidden gy-4">
-        @for (item of specialArticles; track $index) {
-          <div class="m-card col-md-6 p-0 overflow-hidden rounded-end-3 position-relative">
+    <div class="container">
+      @for (item of specialArticles; track item.id) {
+        <div class="row rounded-2 overflow-hidden mb-4 m-card">
+          <div
+            class="m-card col-md-6 p-0 overflow-hidden rounded-end-3 position-relative"
+            (click)="goToDetails(item.slug)"
+          >
             <img class="w-100 h-100 img-hover" [src]="item.image" [alt]="item.slug" />
             <div class="position-absolute bg-g p-2 text-light rounded-pill translate-middle">
               <span class="fw-semibold"><i class="fa-solid fa-star"></i> مميز </span>
             </div>
           </div>
-          <div class="m-card col-md-6 rounded-start-3 border border-1 p-0 bg-dark">
+          <div
+            class="m-card col-md-6 rounded-start-3 border border-1 p-0 bg-dark"
+            (click)="goToDetails(item.slug)"
+          >
             <div class="p-5">
               <div class="mb-3">
                 <span class="rounded-pill p-2 border border-1 text-main">إضاءة </span
@@ -131,39 +142,40 @@
               </div>
             </div>
           </div>
-        }
-      </div>
+        </div>
+      }
     </div>
   </section>
   <section class="py-4">
     <div class="container-fluid">
-      <div class="text-center p-3 bg-info-subtle mb-3">
-        <div class="rounded-pill p-3 border d-inline-block mb-4">
-          <span>
-            <i class="fa-solid fa-circle animated-color"></i>
-            <i class="fa-solid fa-circle animated-color scale-up mx-1"></i>
+      <div class="text-center p-4 section-header mb-4">
+        <div class="rounded-pill px-4 py-2 border d-inline-flex align-items-center gap-2 mb-4">
+          <span class="dots">
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle mx-1 scale-up"></i>
           </span>
-          <span> التصنيفات</span>
+          <span class="fw-semibold">التصنيفات</span>
         </div>
-        <h1 class="mb-4 fw-bold">استكشف حسب الموضوع</h1>
-        <p class="text-black-50 mb-4">اعثر على محتوى مصمم حسب اهتماماتك</p>
+
+        <h1 class="mb-3 fw-bold text-white">استكشف حسب الموضوع</h1>
+        <p class="text-white-50 mb-0">اعثر على محتوى مصمم حسب اهتماماتك</p>
       </div>
+
       <div class="row g-3">
         @for (categorie of dummy.categories; track $index) {
-          <div
-            class="col-6 col-md-3 bg-hov rounded-3"
-            [routerLink]="'/home'"
-            [queryParams]="{ category: categorie.name }"
-          >
-            <div class="p-2">
-              <a class="text-decoration-none text-reset">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span><i class="fa-solid text-main" [class]="categorie.icon"></i></span>
-                  <span><i class="fa-solid fa-angle-left text-white"></i></span>
-                </div>
-                <h3 class="text-black">{{ categorie.name }}</h3>
-                <p class="text-black-50">{{ categorie.count }} مقالة</p>
-              </a>
+          <div class="col-6 col-md-3">
+            <div
+              class="bg-hov rounded-3 h-100 p-3 category-card"
+              [routerLink]="'/home'"
+              [queryParams]="{ category: categorie.name }"
+            >
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <i class="fa-solid text-main fs-4" [class]="categorie.icon"></i>
+                <i class="fa-solid fa-angle-left text-white opacity-75"></i>
+              </div>
+
+              <h5 class="text-light mb-1">{{ categorie.name }}</h5>
+              <p class="text-white-50 mb-0">{{ categorie.count }} مقالة</p>
             </div>
           </div>
         }
@@ -193,7 +205,7 @@
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         @for (item of latestArticlesList; track $index) {
-          <div class="col over">
+          <div class="col over" (click)="goToDetails(item.slug)">
             <div class="card h-100 overflow-hidden btn-castum position-relative">
               <img [src]="item.image" class="card-img-top overflow-hidden" alt="..." />
               <div class="position-absolute category p-2 text-light rounded-pill translate-middle">
@@ -231,49 +243,46 @@
   </section>
   <section>
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-      <div class="p-5 text-center border rounded-4 shadow-sm bg-light">
-        <div
-          class="mx-auto mb-3 btn btn-outline-danger d-flex align-items-center justify-content-center"
-          style="width: 45px; height: 45px"
-        >
-          <i class="fa-regular fa-envelope fa-2x"></i>
+      <div class="newsletter-card p-5 text-center rounded-4 shadow-sm">
+        <div class="icon-wrap mx-auto mb-3 d-flex align-items-center justify-content-center">
+          <i class="fa-regular fa-envelope fa-xl"></i>
         </div>
 
-        <h3 class="fw-bold py-3">اشترك في نشرتنا الإخبارية</h3>
-        <p class="text-muted pb-3">
+        <h3 class="fw-bold py-3 text-white">اشترك في نشرتنا الإخبارية</h3>
+        <p class="text-white-50 pb-3">
           احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
         </p>
 
         <div class="input-group mt-4">
-          <input type="email" class="form-control" placeholder="أدخل بريدك الإلكتروني" />
-          <button class="btn btn-danger me-1">اشتراك</button>
+          <input
+            type="email"
+            class="form-control newsletter-input"
+            placeholder="أدخل بريدك الإلكتروني"
+          />
+          <button class="btn btn-main px-4">اشتراك</button>
         </div>
-        <div class="d-flex py-3">
-          <div class="d-flex">
-            <div>
-              <span
-                ><img
-                  class="col-1 rounded-circle"
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-                  alt=""
-              /></span>
-              <span
-                ><img
-                  class="col-1 rounded-circle mx-3"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-                  alt=""
-              /></span>
-              <span
-                ><img
-                  class="col-1 rounded-circle"
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face"
-                  alt=""
-              /></span>
-            </div>
-            <span>انضم لـ <span class="fw-bold">+10,000</span> مصور</span>
+
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center gap-3 py-4 text-white-50"
+        >
+          <div class="d-flex align-items-center">
+            <img
+              class="avatar"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+            />
+            <img
+              class="avatar mx-2"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+            />
+            <img
+              class="avatar"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face"
+            />
           </div>
-          <p class="mx-4">بدون إزعاج</p>
-          <p>إلغاء الاشتراك في أي وقت</p>
+
+          <span>انضم لـ <span class="fw-bold text-white">+10,000</span> مصور</span>
+          <span>بدون إزعاج</span>
+          <span>إلغاء الاشتراك في أي وقت</span>
         </div>
       </div>
     </div>

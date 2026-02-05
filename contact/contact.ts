@@ -1,7 +1,9 @@
+import { routes } from './../../app.routes';
 import { Article } from './../article';
 import { Component } from '@angular/core';
 import { DUMMY, Dummy } from '../../dummy';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface FilterButton {
   label: string;
@@ -20,6 +22,8 @@ export class Contact {
   activeCategory: string = '';
 
   searchTerm: string = '';
+
+  artivale: any;
 
   currentPage = 0;
 
@@ -86,5 +90,28 @@ export class Contact {
 
     this.filterArticle = result;
     this.displayedFilterResult = result.slice(0, 6);
+  }
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
+
+  goToDetails(slug: string): void {
+    this.router.navigate(['/details', slug]);
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      let category = params['category'];
+
+      if (category) {
+        this.activeCategory = category;
+        this.filterArticles(category);
+      } else {
+        this.filterArticles('');
+        this.activeCategory = '';
+      }
+    });
   }
 }

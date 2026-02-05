@@ -1,8 +1,8 @@
-import { RouterLink } from '@angular/router';
+import { Article } from './../article';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { Dummy, DUMMY } from '../../dummy';
-import { Article } from '../article';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +13,17 @@ import { Article } from '../article';
 export class Home {
   dummy: Dummy = DUMMY;
 
+  article: any;
+
   specialArticles = this.dummy.articles.filter((art) => art.featured);
 
-  latestArticlesList = [...this.dummy.articles]
+  latestArticlesList = this.dummy.articles
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
+
+  constructor(private router: Router) {}
+
+  goToDetails(slug: string): void {
+    this.router.navigate(['/details', slug]);
+  }
 }

@@ -6,10 +6,7 @@
     <div class="container">
       <div class="row g-4 g-lg-5">
         <div class="col-12 col-md-6 col-lg-3">
-          <a
-            class="footer-brand d-flex align-items-center gap-3 mb-4 text-decoration-none"
-            href="#"
-          >
+          <a class="footer-brand d-flex align-items-center gap-3 mb-4 text-decoration-none">
             <div class="footer-logo d-flex align-items-center justify-content-center rounded-3">
               <span class="logo-text text-white fw-bold fs-5">ع</span>
             </div>
@@ -85,27 +82,58 @@
           </h5>
           <ul class="footer-links list-unstyled m-0 d-flex flex-column gap-2">
             <li>
-              <a href="#" class="footer-link text-decoration-none">
+              <a
+                routerLink="/contact"
+                [queryParams]="{ category: 'إضاءة' }"
+                class="footer-link text-decoration-none"
+              >
                 <i class="fa-solid fa-chevron-right arrow-icon"></i>
                 إضاءة
               </a>
             </li>
+
             <li>
-              <a href="#" class="footer-link text-decoration-none">
+              <a
+                routerLink="/contact"
+                [queryParams]="{ category: 'بورتريه' }"
+                class="footer-link text-decoration-none"
+              >
                 <i class="fa-solid fa-chevron-right arrow-icon"></i>
                 بورتريه
               </a>
             </li>
+
             <li>
-              <a href="#" class="footer-link text-decoration-none">
+              <a
+                ActivatedRoute
+                routerLink="/contact"
+                [queryParams]="{ category: 'مناظر طبيعية' }"
+                class="footer-link text-decoration-none"
+              >
                 <i class="fa-solid fa-chevron-right arrow-icon"></i>
                 مناظر طبيعية
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link text-decoration-none">
+              <a
+                ActivatedRoute
+                routerLink="/contact"
+                [queryParams]="{ category: 'تقنيات' }"
+                class="footer-link text-decoration-none"
+              >
                 <i class="fa-solid fa-chevron-right arrow-icon"></i>
                 تقنيات
+              </a>
+            </li>
+            <li>
+              <a
+                ActivatedRoute
+                routerLink="/contact"
+                [queryParams]="{ category: 'معدات' }"
+                class="footer-link text-decoration-none"
+              >
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                معدات
               </a>
             </li>
           </ul>
@@ -148,12 +176,8 @@
           <div
             class="footer-bottom-links d-flex gap-3 justify-content-center justify-content-md-end"
           >
-            <a href="#" class="bottom-link small text-secondary text-decoration-none"
-              >سياسة الخصوصية</a
-            >
-            <a href="#" class="bottom-link small text-secondary text-decoration-none"
-              >شروط الخدمة</a
-            >
+            <a class="bottom-link small text-secondary text-decoration-none">سياسة الخصوصية</a>
+            <a class="bottom-link small text-secondary text-decoration-none">شروط الخدمة</a>
           </div>
         </div>
       </div>

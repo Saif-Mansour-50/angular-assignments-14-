@@ -1,0 +1,101 @@
+<header class="overflow-hidden header-bg">
+  <header class="header-bg" [style.backgroundImage]="'url(' + article?.image + ')'">
+    <div class="privacy-container container">
+      <div class="text-center">
+        <nav
+          class="privacy-breadcrumb d-flex align-items-center justify-content-start gap-2 small mb-4 pt-4"
+        >
+          <a routerLink="/home" class="text-secondary text-decoration-none"> الرئيسية </a>
+          <i class="fa-solid fa-chevron-left arrow-icon"></i>
+          <a routerLink="/contact" class="text-secondary text-decoration-none"> المدونه </a>
+          <i class="fa-solid fa-chevron-left arrow-icon"></i>
+
+          <span class="text-orange fw-medium">
+            {{ article?.title }}
+          </span>
+        </nav>
+
+        <p class="text-secondary fs-5">
+          {{ article?.date }}
+        </p>
+
+        <h1 class="display-4 fw-bold text-white mb-3">
+          {{ article?.title }}
+        </h1>
+      </div>
+    </div>
+  </header>
+</header>
+
+<main class="privacy-page py-5">
+  <div class="container">
+    <div class="excerpt-box shadow-lg bg-secondary mb-5">
+      <div class="container">
+        <h3 class="excerpt-text">
+          {{ article?.excerpt }}
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="privacy-sections d-flex flex-column gap-5">
+          @for (section of sections; track $index) {
+            <section>
+              <h2 class="fs-2 fw-bold text-white mb-3">
+                {{ section.title }}
+              </h2>
+
+              <div class="privacy-section-content">
+                @for (p of section.content; track $index) {
+                  <p class="text-secondary lh-lg mb-3">
+                    {{ p }}
+                  </p>
+                }
+              </div>
+            </section>
+          }
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-sticky top-0">
+          <div class="toc p-4 rounded-4 bg-dark">
+            <h5 class="text-white fw-bold mb-3">محتويات المقال</h5>
+
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              @for (section of sections; track $index) {
+                <li>
+                  <a
+                    class="toc-link text-secondary text-decoration-none lh-lg d-flex align-items-center gap-3"
+                  >
+                    <span
+                      class="toc-num d-flex justify-content-center align-items-center rounded-3"
+                      >{{ $index + 1 }}</span
+                    >
+                    <span class="toc-title lh-lg fw-semibold">{{ section.title }}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="article-meta d-flex align-items-center gap-4 text-secondary pt-3 me-5">
+            <p class="m-0 d-flex align-items-center gap-2">
+              <i class="fa-regular fa-calendar"></i>
+              {{ article?.date }}
+            </p>
+
+            <p class="m-0 d-flex align-items-center gap-2">
+              <i class="fa-regular fa-clock"></i>
+              {{ article?.readTime }}
+            </p>
+          </div>
+          <div class="cta-box text-center">
+            <h3 class="fw-bold mb-2">لا تفوّت جديدنا</h3>
+            <p class="text-secondary mb-4">اشترك للحصول على أحدث المقالات</p>
+
+            <a routerLink="/contact" class="btn btn-outline-warning px-4 py-2"> تصفح المزيد </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

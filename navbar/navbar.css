@@ -5,3 +5,41 @@ p {
   margin: 0;
   padding: 0;
 }
+.main-navbar {
+  background-color: #161616;
+}
+
+.navbar-brand p {
+  color: #fff;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.nav-link {
+  color: #ddd;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ea580c;
+}
+
+.bg-main {
+  background-color: #ea580c;
+}
+
+.btn-main {
+  background-color: #ea580c;
+  color: #fff;
+  border: none;
+}
+
+.btn-main:hover {
+  background-color: #f97316;
+}
