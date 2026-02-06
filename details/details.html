@@ -1,5 +1,5 @@
 <header class="overflow-hidden header-bg">
-  <header class="header-bg" [style.backgroundImage]="'url(' + article?.image + ')'">
+  <header class="header-bg" [style.backgroundImage]="'url(' + article.image + ')'">
     <div class="privacy-container container">
       <div class="text-center">
         <nav
@@ -11,16 +11,16 @@
           <i class="fa-solid fa-chevron-left arrow-icon"></i>
 
           <span class="text-orange fw-medium">
-            {{ article?.title }}
+            {{ article.title }}
           </span>
         </nav>
 
         <p class="text-secondary fs-5">
-          {{ article?.date }}
+          {{ article.date }}
         </p>
 
         <h1 class="display-4 fw-bold text-white mb-3">
-          {{ article?.title }}
+          {{ article.title }}
         </h1>
       </div>
     </div>
@@ -32,18 +32,22 @@
     <div class="excerpt-box shadow-lg bg-secondary mb-5">
       <div class="container">
         <h3 class="excerpt-text">
-          {{ article?.excerpt }}
+          {{ article.excerpt }}
         </h3>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-8">
         <div class="privacy-sections d-flex flex-column gap-5">
           @for (section of sections; track $index) {
             <section>
-              <h2 class="fs-2 fw-bold text-white mb-3">
-                {{ section.title }}
-              </h2>
+              <div class="d-flex">
+                <i class="fa-solid fa-camera text-orange fs-2 ms-2"></i>
+
+                <h2 class="fs-2 fw-bold text-white mb-3">
+                  {{ section.title }}
+                </h2>
+              </div>
 
               <div class="privacy-section-content">
                 @for (p of section.content; track $index) {
@@ -55,13 +59,73 @@
             </section>
           }
         </div>
+        <div class="toc p-4 rounded-4 bg-dark">
+          <h5 class="text-white fw-bold mb-4">الوسوم</h5>
+
+          <div>
+            <span class="border border-1 p-2 bg-secondary rounded-pill">#بورتريه</span>
+            <span class="border border-1 p-2 bg-secondary rounded-pill mx-2">#تصوير أشخاص</span>
+            <span class="border border-1 p-2 bg-secondary rounded-pill">#إضاءة طبيعية</span>
+          </div>
+        </div>
+        <div
+          class="toc p-4 rounded-4 bg-dark my-3 d-flex justify-content-between align-items-center"
+        >
+          <h5 class="text-white fw-bold mb-4">شارك المقال</h5>
+
+          <div class="social-links d-flex gap-2">
+            <a
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none twitter"
+            >
+              <i class="fa-brands fa-x-twitter fa-xl"></i>
+            </a>
+
+            <a
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none linkedin"
+            >
+              <i class="fa-brands fa-linkedin fa-xl"></i>
+            </a>
+
+            <a
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp fa-xl"></i>
+            </a>
+
+            <a
+              class="social-link d-flex align-items-center justify-content-center rounded-3 text-decoration-none link"
+            >
+              <i class="fa-solid fa-link fa-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="toc p-4 rounded-4 bg-dark my-3 d-flex justify-content-between align-items-center gap-4"
+        >
+          <div>
+            <img
+              class="img-fluid rounded-2"
+              [src]="article.author.avatar"
+              [alt]="article.author.role"
+            />
+          </div>
+
+          <div class="social-links gap-2">
+            <span>كاتب المقال</span>
+            <h3>{{ article.author.name }}</h3>
+            <p class="text-white-50">{{ article.author.role }}</p>
+            <p class="text-white-50">
+              مصور محترف شغوف بمشاركة المعرفة والخبرات في عالم التصوير الفوتوغرافي.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4">
         <div class="position-sticky top-0">
           <div class="toc p-4 rounded-4 bg-dark">
             <h5 class="text-white fw-bold mb-3">محتويات المقال</h5>
 
-            <ul class="list-unstyled d-flex flex-column gap-2">
+            <ul class="list-unstyled d-flex flex-column gap-2 p-0">
               @for (section of sections; track $index) {
                 <li>
                   <a
@@ -78,14 +142,13 @@
             </ul>
           </div>
           <div class="article-meta d-flex align-items-center gap-4 text-secondary pt-3 me-5">
-            <p class="m-0 d-flex align-items-center gap-2">
-              <i class="fa-regular fa-calendar"></i>
-              {{ article?.date }}
-            </p>
-
-            <p class="m-0 d-flex align-items-center gap-2">
+            <p class="m-0 d-flex align-items-center gap-2 border border-2 p-3 rounded-3">
               <i class="fa-regular fa-clock"></i>
-              {{ article?.readTime }}
+              {{ article.readTime }}
+            </p>
+            <p class="m-0 d-flex align-items-center gap-2 border border-2 p-3 rounded-3">
+              <i class="fa-regular fa-calendar"></i>
+              {{ article.date }}
             </p>
           </div>
           <div class="cta-box text-center">

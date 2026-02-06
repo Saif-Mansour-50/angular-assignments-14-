@@ -3,7 +3,9 @@ section {
   position: relative;
   z-index: 1;
 }
-
+h1 {
+  font-size: 3.75rem;
+}
 .grid-bg {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),

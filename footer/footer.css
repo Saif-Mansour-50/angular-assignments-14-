@@ -68,7 +68,6 @@
   width: 32px;
   height: 2px;
   background: linear-gradient(to right, #f97316, #eab308);
-  border-radius: 9999px;
 }
 
 .footer-link {
@@ -110,10 +109,6 @@
   outline: none;
 }
 
-.newsletter-input::placeholder {
-  color: #525252;
-}
-
 .btn-subscribe {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
   border: none;
@@ -124,7 +119,7 @@
 .btn-subscribe:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  /* background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); */
   color: #ffffff;
 }
 

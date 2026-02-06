@@ -168,6 +168,12 @@ section {
   background-image: linear-gradient(to right, #f95401, #f5a602);
 }
 
+.text-main {
+  color: #ea580c;
+}
+h1 {
+  font-size: 60px;
+}
 .value-card {
   border: 2px solid #ea580c;
   border-radius: 16px;
