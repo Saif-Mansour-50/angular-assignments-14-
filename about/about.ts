@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { DUMMY, Dummy } from '../../dummy';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
