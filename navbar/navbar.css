@@ -7,6 +7,7 @@ p {
 }
 .main-navbar {
   background-color: #161616;
+  z-index: 9999;
 }
 
 .navbar-brand p {
