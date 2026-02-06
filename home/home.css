@@ -199,7 +199,8 @@ h1 {
   transform: translateX(-6px);
 }
 
-.category-card {
+.category-card,
+.row-cols-md-3 {
   cursor: pointer;
   transition: all 0.3s ease;
 }
